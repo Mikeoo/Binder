@@ -30,7 +30,7 @@
                             <FormattedString.Spans>
                                 <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
                                 <Span Text=" " />
-                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text="1" ForegroundColor="{StaticResource LightTextColor}" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -53,7 +53,7 @@
                             <FormattedString.Spans>
                                 <Span Text="It shares code with its" />
                                 <Span Text=" " />
-                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
+                                <Span Text="iOS, Android, and Windows!" FontAttributes="Bold" />
                                 <Span Text=" " />
                                 <Span Text="versions." />
                             </FormattedString.Spans>
