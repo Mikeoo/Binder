@@ -22,7 +22,7 @@
             </NavigationPage.Icon>
         </NavigationPage>
     </TabbedPage.Children>
-    <NavigationPage Title="Upload Photo">
+    <NavigationPage Title="Upload Your House">
             <x:Arguments>
                 <views:AboutPage />
             </x:Arguments>
