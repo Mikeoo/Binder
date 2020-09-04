@@ -28,7 +28,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="AppNames" FontAttributes="Bold" FontSize="22" />
                                 <Span Text=" " />
                                 <Span Text="1" ForegroundColor="{StaticResource LightTextColor}" />
                             </FormattedString.Spans>
