@@ -4,10 +4,11 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Binder.iOS;
 using Binder.Services;
+using Foundation;
 using UIKit;
 
 [assembly: Xamarin.Forms.Dependency(typeof(PhotoPickerService))]
-namespace Binder.iOS
+namespace Binder.Services
 {
     public class PhotoPickerService : IPhotoPickerService
     {
@@ -24,8 +25,8 @@ namespace Binder.iOS
                 MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary)
             };
 
-            imagePicker.FinishedPickingMedia += OnImagePickerFinishedPickingMedia;
-            imagePicker.Canceled += OnImagePickerCanceled;
+            imagePicker.FinishedPickingMedia += OnImagePickerFinishedPickMedia;
+            imagePicker.Canceled += OnImagePickerCancelled;
 
             //Present UIImagePickerController
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
@@ -56,6 +57,10 @@ namespace Binder.iOS
                     data = image.AsJPEG();
                 }
 
+                Stream stream = data.AsStream();
+
+                UnregisterEventHandlers();
+
                 //Set the Stream as the completion of the Task
                 taskCompletionSource.SetResult(stream);
             }
@@ -64,13 +69,15 @@ namespace Binder.iOS
                 UnregisterEventHandlers();
                 taskCompletionSource.SetResult(null);
             }
+
+            imagePicker.DismissModalViewController(true);
         }
 
         void OnImagePickerCancelled(object sender, EventArgs args)
         {
             UnregisterEventHandlers();
             taskCompletionSource.SetResult(null);
-            imagePicker.DismissModelViewController(ture);
+            imagePicker.DismissModalViewController(true);
         }
 
         void UnregisterEventHandlers()

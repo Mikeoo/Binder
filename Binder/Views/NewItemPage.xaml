@@ -10,6 +10,9 @@
             <Entry Text="{Binding Item.Text}" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+            <Button Text="Get Geo-Location" Clicked="OnLocationButton_Clicked"/>
+            <Button x:Name="UploadPhotoButton" Text="Pick Photo" Clicked="OnPickPhotoButton_Clicked" />
+            <Image x:Name="PhotoImage"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
