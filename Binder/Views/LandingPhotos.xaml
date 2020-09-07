@@ -3,11 +3,72 @@
     <ContentPage.ToolbarItems>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding HouseList[0].City}" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
-        </StackLayout>
+        <Grid RowDefinitions="15, 15" ColumnDefinitions="200, 200">
+                  <Label Grid.Row="0" Grid.Column="0"
+                      x:Name="CityLabel" 
+                      Text="City:"
+                      Style="{DynamicResource LargeLabel}"/>
+                  <Label Grid.Row="0" Grid.Column="1"
+                      x:Name="CityBinding" 
+                      Text="{Binding HouseList[0].City}"
+                      Style="{DynamicResource LargeLabel}"/>
+
+                   <Label Grid.Row="1" Grid.Column="0"
+                      x:Name="IsRentLabel" 
+                      Text="Rent"
+                      Style="{DynamicResource LargeLabel}"/>
+                  <Label Grid.Row="1" Grid.Column="1"
+                      x:Name="IsRentBinding" 
+                      Text="{Binding HouseList[0].IsRent}"
+                      Style="{DynamicResource LargeLabel}"/>
+
+                  <Label Grid.Row="2" Grid.Column="0"
+                      x:Name="HouseNumberLabel" 
+                      Text="House Number:"
+                      Style="{DynamicResource LargeLabel}"/>
+                  <Label Grid.Row="2" Grid.Column="1"
+                      x:Name="HouseNumberBinding" 
+                      Text="{Binding HouseList[0].HouseNumber}"
+                      Style="{DynamicResource LargeLabel}"/>
+            
+                  <Label Grid.Row="3" Grid.Column="0"
+                      x:Name="HouseNumberAdditionLabel" 
+                      Text="House Number Addition:"
+                      Style="{DynamicResource LargeLabel}"/>
+                  <Label Grid.Row="3" Grid.Column="1"
+                      x:Name="HouseNumberAdditionBinding" 
+                      Text="{Binding HouseList[0].HouseNumberAddition}"
+                      Style="{DynamicResource LargeLabel}"/>
+            
+                  <Label Grid.Row="4" Grid.Column="0"
+                      x:Name="PriceLabel" 
+                      Text="Price:"
+                      Style="{DynamicResource LargeLabel}"/>
+                  <Label Grid.Row="4" Grid.Column="1"
+                      x:Name="PriceBinding" 
+                      Text="{Binding HouseList[0].Price}"
+                      Style="{DynamicResource LargeLabel}"/>
+            
+                  <Label Grid.Row="5" Grid.Column="0"
+                      x:Name="LatitudeLabel" 
+                      Text="Latitude:"
+                      Style="{DynamicResource LargeLabel}"/>
+                  <Label Grid.Row="5" Grid.Column="1"
+                      x:Name="LatitudeBinding" 
+                      Text="{Binding HouseList[0].Latitude}"
+                      Style="{DynamicResource LargeLabel}"/>
+                 </Grid>
+      <!--  <StackLayout Spacing="20" Padding="15">
+            <Label  Text="{Binding HouseList[0].City}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].IsRent}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].HouseNumber}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].HouseNumberAddition}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].Price}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].Latitude}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].Longitude}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].Photo}" FontSize="Medium" />
+            <Label Text="{Binding HouseList[0].HouseType}" FontSize="Medium" />
+
+        </StackLayout> -->
     </ContentPage.Content>
 </ContentPage>
