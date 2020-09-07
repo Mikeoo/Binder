@@ -77,7 +77,6 @@ namespace Binder.Views
                 var request = new GeolocationRequest(GeolocationAccuracy.Medium);
                 var location = await Geolocation.GetLocationAsync(request);
 
-                Geocoding.
 
                 if (location != null)
                 {

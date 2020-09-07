@@ -16,4 +16,7 @@
     <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Services\IPhotoPickerService.cs" />
+  </ItemGroup>
 </Project>

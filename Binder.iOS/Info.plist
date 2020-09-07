@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Binder</string>
 	<key>CFBundleIdentifier</key>
-	<string>nl.perfectpixels.Binder</string>
+	<string>Binder.Binderbinder</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>

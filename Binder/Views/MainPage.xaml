@@ -32,4 +32,14 @@
                 </OnPlatform>
             </NavigationPage.Icon>
         </NavigationPage>
+    <NavigationPage Title="Landing">
+            <x:Arguments>
+                <views:LandingPhotos />
+            </x:Arguments>
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_photo.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+        </NavigationPage>
 </TabbedPage>
