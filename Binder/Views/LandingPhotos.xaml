@@ -1,7 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Binder.Views.LandingPhotos">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Binder.Converters"
+             x:Class="Binder.Views.LandingPhotos">
+        <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RentConverter x:Key="rentConverter" x:DataType="x:Object" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
     </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <Grid RowDefinitions="15, 15, 15, 15, 15, 15" ColumnDefinitions="200, 200">
                   <Label Grid.Row="0" Grid.Column="0"
@@ -15,12 +25,13 @@
 
                    <Label Grid.Row="1" Grid.Column="0"
                       x:Name="IsRentLabel" 
-                      Text="Rent"
-                      Style="{DynamicResource LargeLabel}"/>
+                      Text="Payment"
+                      Style="{DynamicResource LargeLabel}">
+                   </Label>
                   <Label Grid.Row="1" Grid.Column="1"
                       x:Name="IsRentBinding" 
-                      Text="{Binding HouseList[0].IsRent}"
-                      Style="{DynamicResource LargeLabel}"/>
+                      Style="{DynamicResource LargeLabel}"
+                         Text="{Binding HouseList[0].IsRent, Converter={StaticResource rentConverter}}"/>
 
                   <Label Grid.Row="2" Grid.Column="0"
                       x:Name="HouseNumberLabel" 

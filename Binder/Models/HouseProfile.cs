@@ -6,7 +6,7 @@ namespace Binder.Models
         public string Id { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
-        public bool isRent { get; set; }
+        public bool IsRent { get; set; }
         public int HouseNumber { get; set; }
         public string HouseNumberAddition { get; set; }
         public double Price { get; set; }
