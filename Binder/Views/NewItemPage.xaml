@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Binder.Views.NewItemPage" Title="New Item">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Binder.Gestures"
+             x:Class="Binder.Views.NewItemPage" Title="New Item">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
@@ -12,7 +15,11 @@
             <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
             <Button Text="Get Geo-Location" Clicked="OnLocationButton_Clicked"/>
             <Button x:Name="UploadPhotoButton" Text="Pick Photo" Clicked="OnPickPhotoButton_Clicked" />
-            <Image x:Name="PhotoImage"/>
+		<AbsoluteLayout>
+			<local:PanContainer>
+                <Image x:Name="PhotoImage"/>
+            </local:PanContainer>
+        </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
