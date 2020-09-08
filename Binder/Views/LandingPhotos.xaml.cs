@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Binder.Models;
 using Xamarin.Forms;
 using Binder.ViewModels;
@@ -9,6 +10,23 @@ using Binder.Services;
 
 namespace Binder.Views
 {
+    public class BoolToObjectConverter<T> : IValueConverter
+    {
+        public T TrueObject { set; get; }
+
+        public T FalseObject { set; get; }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (bool)value ? TrueObject : FalseObject;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((T)value).Equals(TrueObject);
+        }
+    }
+
     public partial class LandingPhotos : ContentPage
     {
         LandingPhotosViewModel viewModel;
@@ -27,11 +45,7 @@ namespace Binder.Views
             InitializeComponent();
             InitializeData();
 
-
-
-            BindingContext = this;
-            this.ApplyBindings
-            
+            BindingContext = this;            
         }
 
         async void InitializeData()
