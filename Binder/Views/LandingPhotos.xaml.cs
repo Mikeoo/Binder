@@ -30,7 +30,8 @@ namespace Binder.Views
 
 
             BindingContext = this;
-
+            this.ApplyBindings
+            
         }
 
         async void InitializeData()
